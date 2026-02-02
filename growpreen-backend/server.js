@@ -19,10 +19,21 @@ import authAdminCookie from './middleware/authAdminCookie.js';
 
 const app = express();
 
+const allowedOrigins = [
+  'http://localhost:5173',
+ // replace after Netlify URL
+];
+
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'));
+  },
   credentials: true,
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
