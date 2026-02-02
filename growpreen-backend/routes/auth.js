@@ -180,11 +180,12 @@ router.post('/login', async (req, res) => {
 
     res.cookie('gp_token', token, {
       httpOnly: true,
-      sameSite: 'lax',
-      secure: false,
+      sameSite: 'none',   // allow cross-site
+      secure: true,       // required when SameSite=None on HTTPS
       maxAge: 24 * 60 * 60 * 1000, // 24 hours
       path: '/',
     });
+
 
     res.json({
       success: true,
