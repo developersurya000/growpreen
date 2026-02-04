@@ -21,7 +21,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:5173',
-'https://growpreen.netlify.app/', // replace after Netlify URL
+'https://growpreen.netlify.app', // replace after Netlify URL
 ];
 
 app.use(cors({
