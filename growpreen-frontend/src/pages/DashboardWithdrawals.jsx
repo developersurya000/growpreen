@@ -36,30 +36,39 @@ export default function DashboardWithdrawals() {
     loadAll();
   }, []);
 
-  async function handleWithdraw(e) {
-    e.preventDefault();
-    if (sending) return; // prevent double submit
+async function handleWithdraw(e) {
+  e.preventDefault();
+  if (sending) return;
 
-    setStatusMsg('');
-    setError('');
+  setStatusMsg('');
+  setError('');
 
-    if (!payout?.method) {
-      setError('Please save your UPI / bank details first.');
-      return;
-    }
-
-    setSending(true);
-    try {
-      await api.post('/withdrawals/request', { amount: Number(amount) });
-      setStatusMsg('Withdrawal request submitted. We will process soon.');
-      setAmount('');
-      await loadAll();
-    } catch (err) {
-      setError(err.response?.data?.message || 'Request failed');
-    } finally {
-      setSending(false);
-    }
+  if (!payout?.method) {
+    setError('Please save your UPI / bank details first.');
+    return;
   }
+
+  setSending(true);
+  try {
+    await api.post('/withdrawals/request', {
+      amount: Number(amount),
+      method: payout.method,        // ✅ send method to backend
+      details:
+        payout.method === 'UPI'
+          ? `UPI: ${payout.upiName} / ${payout.upiMobile} / ${payout.upiId}`
+          : `BANK: ${payout.accountHolder} / ${payout.bankName} / ${payout.accountNumber} / ${payout.ifsc}`,
+    });
+
+    setStatusMsg('Withdrawal request submitted. We will process soon.');
+    setAmount('');
+    await loadAll();
+  } catch (err) {
+    setError(err.response?.data?.message || 'Request failed');
+  } finally {
+    setSending(false);
+  }
+}
+
 
   async function savePayout(data) {
     if (payoutSaving) return; // prevent double submit
