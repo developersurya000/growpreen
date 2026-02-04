@@ -23,8 +23,8 @@ router.post('/login', (req, res) => {
 
   res.cookie('gp_admin_token', token, {
     httpOnly: true,
-    sameSite: 'lax',
-    secure: false,
+    sameSite: 'none',
+    secure: true,
     maxAge: 24 * 60 * 60 * 1000,          // 24 hours
     path: '/',
   });

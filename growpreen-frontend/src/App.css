@@ -121,7 +121,7 @@ a {
   display: flex;
   align-items: baseline;
   gap: 0.6rem;
-  flex-wrap: wrap; /* ✅ better wrapping on small screens */
+  flex-wrap: wrap;
 }
 
 .gp-price-offer {
@@ -392,7 +392,7 @@ a {
   margin-top: 1.1rem;
   display: flex;
   gap: 0.7rem;
-  flex-wrap: wrap; /* ✅ buttons wrap on narrow screens */
+  flex-wrap: wrap;
 }
 
 .gp-home-hero-note {
@@ -654,7 +654,7 @@ a {
   padding: 0.6rem 0.5rem;
   border-bottom: 1px solid rgba(31, 41, 55, 0.9);
   text-align: left;
-  white-space: nowrap;            /* ✅ keep cells compact */
+  white-space: nowrap;
 }
 
 .gp-table th {
@@ -680,7 +680,7 @@ a {
 .gp-table-actions {
   display: flex;
   gap: 0.4rem;
-  flex-wrap: wrap;               /* ✅ buttons wrap on small width */
+  flex-wrap: wrap;
 }
 
 /* ===== LOADING SPINNER ===== */
@@ -768,7 +768,7 @@ a {
   }
 
   .gp-task-card {
-    flex-direction: column;      /* ✅ stack task card sections */
+    flex-direction: column;
     align-items: flex-start;
   }
 }

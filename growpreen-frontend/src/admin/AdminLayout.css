@@ -7,6 +7,8 @@
   color: #111827;
 }
 
+/* Sidebar */
+
 .admin-sidebar {
   width: 230px;
   background: #ffffff;
@@ -44,9 +46,11 @@
 
 .admin-nav-item-active {
   background: #e9efff;
-  color: #f9fafb;
+  color: #000;
   font-weight: 600;
 }
+
+/* Main / topbar */
 
 .admin-main {
   flex: 1;
@@ -75,10 +79,11 @@
   gap: 1rem;
 }
 
+/* Icon button */
+
 .admin-icon-button {
   border: 1px solid #9ca3af;
   background: #f0f0f0;
-  border-radius: 50%;
   color: #000;
   cursor: pointer;
   font-size: 1.1rem;
@@ -89,28 +94,33 @@
   align-items: center;
   justify-content: center;
 }
+
 .admin-icon-button:hover {
   background: #fee2e2;
   border-color: #ef4444;
   color: #b91c1c;
 }
 
+/* Content area */
+
 .admin-content {
   padding: 1.5rem;
 }
 
 /* Inner admin card, not outer layout */
+
 .gp-admin-inner {
-  background-color: #ffffff;      /* white background */
-  color: #111827;                 /* near-black text */
+  background-color: #ffffff;
+  color: #111827;
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
 }
 
 /* Small blocks/cards inside admin sections */
+
 .gp-admin-inner-block {
-  background-color: #f9fafb;      /* very light gray */
+  background-color: #f9fafb;
   color: #111827;
   border-radius: 8px;
   padding: 0.9rem 1rem;
@@ -118,6 +128,7 @@
 }
 
 /* Headings inside admin cards */
+
 .gp-admin-heading {
   color: #111827;
   margin-bottom: 0.25rem;
@@ -129,6 +140,7 @@
 }
 
 /* Forms inside admin cards */
+
 .gp-admin-form .gp-field span {
   color: #374151;
 }
@@ -142,6 +154,7 @@
 }
 
 /* Tables inside admin */
+
 .gp-admin-table-wrapper {
   margin-top: 1rem;
 }
@@ -162,17 +175,17 @@
 }
 
 /* Divider */
+
 .gp-admin-divider {
   margin: 1.5rem 0;
   border: none;
   border-top: 1px solid #e5e7eb;
 }
 
-/* ================================
+/* =========================================
    ADMIN PANEL – SCOPED STYLES ONLY
-   ================================ */
+   ========================================= */
 
-/* admin background */
 .admin-shell,
 .admin-main,
 .admin-content,
@@ -183,6 +196,7 @@
 }
 
 /* admin cards */
+
 .admin-shell .gp-card {
   background: #ffffff;
   color: #000000;
@@ -192,6 +206,7 @@
 }
 
 /* headings */
+
 .admin-shell h1,
 .admin-shell h2,
 .admin-shell h3,
@@ -200,12 +215,14 @@
 }
 
 /* subtitles */
+
 .admin-shell .gp-subtitle,
 .admin-shell .gp-admin-text-muted {
   color: #444;
 }
 
 /* forms */
+
 .admin-shell .gp-form {
   background: #ffffff;
 }
@@ -231,6 +248,7 @@
 }
 
 /* tables */
+
 .admin-shell .gp-table-wrapper {
   background: #ffffff;
   border-radius: 10px;
@@ -258,6 +276,7 @@
 }
 
 /* buttons */
+
 .admin-shell .gp-btn-primary {
   background: #4f7cff;
   color: #fff;
@@ -270,6 +289,7 @@
 }
 
 /* remove dark admin classes */
+
 .admin-shell .gp-admin-dark,
 .admin-shell .gp-admin-form-dark,
 .admin-shell .gp-admin-item-dark,
@@ -279,6 +299,7 @@
 }
 
 /* admin error (not logged in, auth errors) */
+
 .admin-shell .gp-alert-error,
 .admin-shell .admin-not-logged-in {
   color: #8b0000;
@@ -311,7 +332,7 @@ button:disabled {
 
 /* ================================
    RESPONSIVE ADMIN PANEL (ADD-ON)
-   ================================ */
+   ================================= */
 
 /* Large tablets & small laptops */
 @media (max-width: 1024px) {
