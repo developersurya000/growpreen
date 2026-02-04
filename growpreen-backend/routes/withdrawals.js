@@ -84,9 +84,12 @@ router.post('/request', authUserCookie, async (req, res) => {
 
     res.status(201).json({ success: true });
   } catch (e) {
-    console.error(e);
-    res.status(500).json({ message: 'Failed to create withdrawal' });
-  }
+  console.error('Withdrawal error:', e);   // keep full object
+  res.status(500).json({
+    message: 'Failed to create withdrawal',
+    error: e?.message || 'Unknown error',
+  });
+}
 });
 
 export default router;
