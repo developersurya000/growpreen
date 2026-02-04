@@ -121,7 +121,7 @@ a {
   display: flex;
   align-items: baseline;
   gap: 0.6rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* ✅ better wrapping on small screens */
 }
 
 .gp-price-offer {
@@ -392,7 +392,7 @@ a {
   margin-top: 1.1rem;
   display: flex;
   gap: 0.7rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* ✅ buttons wrap on narrow screens */
 }
 
 .gp-home-hero-note {
@@ -654,7 +654,7 @@ a {
   padding: 0.6rem 0.5rem;
   border-bottom: 1px solid rgba(31, 41, 55, 0.9);
   text-align: left;
-  white-space: nowrap;
+  white-space: nowrap;            /* ✅ keep cells compact */
 }
 
 .gp-table th {
@@ -680,7 +680,7 @@ a {
 .gp-table-actions {
   display: flex;
   gap: 0.4rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap;               /* ✅ buttons wrap on small width */
 }
 
 /* ===== LOADING SPINNER ===== */
@@ -768,7 +768,7 @@ a {
   }
 
   .gp-task-card {
-    flex-direction: column;
+    flex-direction: column;      /* ✅ stack task card sections */
     align-items: flex-start;
   }
 }
@@ -814,90 +814,17 @@ a {
   }
 }
 
-/* Mobile fix for "Your performance" section */
+/* ================= DASHBOARD MOBILE FIX ================= */
 @media (max-width: 768px) {
-  .gp-performance-stats {
+  /* Stack analytics + balance cards */
+  .gp-dashboard-top {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1rem;
   }
 
-  .gp-performance-stat {
-    width: 100%;
-    text-align: left;
-  }
-}
-
-/* Page wrapper */
-.gp-page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-/* Card base */
-.gp-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-/* Subtitle text */
-.gp-subtitle {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-/* Analytics grid (desktop default) */
-.gp-analytics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-}
-
-/* Individual analytics item */
-.gp-analytics-item {
-  background: #f7f9fc;
-  border-radius: 10px;
-  padding: 0.75rem;
-}
-
-.gp-label {
-  font-size: 0.75rem;
-  color: #888;
-  margin-bottom: 0.25rem;
-}
-
-.gp-analytics-value {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-/* Footer */
-.gp-home-footer {
-  text-align: center;
-  font-size: 0.8rem;
-  color: #777;
-}
-
-/* ---------------------------------- */
-/* ✅ MOBILE FIXES */
-/* ---------------------------------- */
-@media (max-width: 768px) {
-  /* Top row (analytics + balance) stack vertically */
-  .gp-page > div[style*="display: flex"] {
-    flex-direction: column;
-  }
-
-  /* Analytics grid becomes vertical */
+  /* Make analytics items vertical */
   .gp-analytics-grid {
     grid-template-columns: 1fr;
-  }
-
-  /* Balance card full width */
-  .gp-card[style*="260px"] {
-    flex: 1 1 auto !important;
   }
 }

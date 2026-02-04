@@ -59,7 +59,7 @@ export default function DashboardHome() {
       </div>
 
       {/* top row: analytics + balance */}
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem' }}>
+      <div className="gp-dashboard-top" style={{ marginBottom: '1.5rem' }}>
         {/* analytics middle section */}
         <div className="gp-card" style={{ flex: '1 1 auto' }}>
           <h3>Your performance</h3>
